@@ -1,0 +1,30 @@
+---
+name: 企业微信登录插件
+code: wework
+type: extension
+copyright: 
+site: https://github.com/jinyunboss/zentao-wework
+author: 'jinyunboss'
+abstract: 
+desc: >
+  同步企业微信用户到禅道后，可使用企业微信扫码登陆
+  在禅道开源版20 stable版本测试可用
+install: |
+  1. 通过禅道的插件管理来进行安装。
+    1.1 使用管理员身份登录禅道，访问插件管理。
+    1.2 打开获得插件页面，搜索找到本插件。
+    1.3 选择自动安装，按照页面提示即可。
+  2. 手工安装，将代码解压缩，然后将目录拷贝到禅道对应的目录，比如module拷贝到zentao的module。
+  3. 修改extension/custom/wework/config/config.php中的企业微信应用配置
+  4. 在禅道后台人员管理中点击同步企业微信用户
+releases:
+  0.1:
+    zentao:
+      compatible: all
+      incompatible:
+    charge: free
+    date: 2024-06-05
+    conflicts: null
+    depends: null
+    license: MIT
+    changelog: 

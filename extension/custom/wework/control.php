@@ -19,7 +19,7 @@ class wework extends control
         $this->app->loadClass('wechatapi', true);
         $wechatApi = new wechatapi($this->config->wework->corp_id, $this->config->wework->secret, $this->config->wework->agent_id);
         $AllUsers = $wechatApi->getAllUsers();
-
+        var_dump($wechatApi->getErrors());
         foreach ( $AllUsers['data'] as $key => $value) {
             printf("姓名: %s, 企业微信ID: %s</br>",$key,$value);
             $data = $this->user->getById($value);
@@ -106,7 +106,7 @@ class wework extends control
             $wechatApi = new wechatapi($this->config->wework->corp_id, $this->config->wework->secret, $this->config->wework->agent_id);
             $token = $wechatApi->getToken();
             $response = $wechatApi->queryAPI($wechatApi->apiUrl . "auth/getuserinfo?access_token=${token}&code=${code}");
-            // var_dump($wechatApi->getErrors());
+            var_dump($wechatApi->getErrors());
             if ($wechatApi->isError()) return $this->locate($this->createLink('user', 'login'));;
 
             $this->userid = $response->userid;

@@ -24,9 +24,8 @@ class weworkCommon extends commonModel
          */
         $module = $this->app->getModuleName();
         $method = $this->app->getMethodName();
-        if ($module == 'wework' and $method == 'login') return true;
-        // $whitelist += 'wework-login|';
-
+        $allow_method = array("login","sync", "bind");
+        if ($module == 'wework' and in_array($method, $allow_method)) return true;
         return parent::checkIframe($whitelist);
     }
 }

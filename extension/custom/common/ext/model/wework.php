@@ -12,3 +12,8 @@ public function isOpenMethod(string $module, string $method): bool
 {
     return $this->loadExtension('wework')->isOpenMethod($module, $method);
 }
+public function checkIframe(?string $whitelist = null)
+{
+    return $this->loadExtension('wework')->checkIframe($whitelist);
+
+}

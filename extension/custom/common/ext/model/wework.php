@@ -8,11 +8,11 @@
  * @access public
  * @return bool
  */
-public function isOpenMethod(string $module, string $method): bool
+public function isOpenMethod($module,$method): bool
 {
     return $this->loadExtension('wework')->isOpenMethod($module, $method);
 }
-public function checkIframe(?string $whitelist = null)
+public function checkIframe($whitelist = null)
 {
     return $this->loadExtension('wework')->checkIframe($whitelist);
 

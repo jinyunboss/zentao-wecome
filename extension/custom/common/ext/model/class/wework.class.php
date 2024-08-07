@@ -11,13 +11,13 @@ class weworkCommon extends commonModel
      * @access public
      * @return bool
      */
-    public function isOpenMethod(string $module, string $method): bool
+    public function isOpenMethod($module, $method): bool
     {
         if ($module == 'wework' and $method == 'login') return true;
         return parent::isOpenMethod($module, $method);
     }
 
-    public function checkIframe(?string $whitelist = null)
+    public function checkIframe($whitelist = null)
     {
         /**
          * 允许在非 iframe 中打开wework-login
